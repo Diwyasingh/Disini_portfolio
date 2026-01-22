@@ -1,0 +1,306 @@
+<html>
+    
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disini Diwyanga Wickramasinghe | Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #432627;
+      --secondary: #380202;
+      --accent: #541215;
+      --bg: #fae8f6;
+      --card: #f5d2d2;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: #1e293b;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--card);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      z-index: 100;
+    }
+
+    nav h2 {
+      margin: 0;
+      color: var(--primary);
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+      color: var(--secondary);
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background: var(--primary);
+      transition: 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h1, h2 {
+      color: var(--secondary);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.2rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-text span {
+      color: var(--primary);
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .hero-img {
+      text-align: center;
+    }
+
+    .hero-img img {
+      width: 260px;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 6px solid var(--primary);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0); }
+    }
+
+    .about-card {
+      background: var(--card);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      text-align: center;
+      animation: fadeUp 1s ease;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .skill {
+      background: var(--card);
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(74, 3, 3, 0.155);
+    }
+
+    .skill h4 {
+      margin-bottom: 10px;
+    }
+
+    .progress {
+      background: #e5e7eb;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 10px;
+    }
+
+    .progress span {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .project {
+      background: var(--card);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-8px);
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact a {
+      display: inline-block;
+      margin: 10px 15px;
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #e2e8f0;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h2>Disini Wickramasinghe</h2>
+    <div>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Hi, <span> i'm Disini Diwyanga Wickramasinghe</span></h1>
+      <p>
+        Undergraduate of the Information Systems Department, Faculty of Computing,
+        University of Sri Jayewardenepura. Passionate about building modern web
+        applications and analyzing business-driven solutions.
+      </p>
+    </div>
+    <div class="hero-img">
+      <img src="profile.jpeg" alt="Disini Profile Photo">
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-card">
+      <p>
+        I am an enthusiastic Information Systems undergraduate with strong technical
+        and management knowledge. My interests include <b>Business Analysis</b>,
+        <b>Web Development</b>, <b>Database Administration</b>, and
+        <b>Project Management</b>. I enjoy transforming ideas into practical and
+        user-friendly digital solutions.
+      </p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Technical & Professional Skills</h2>
+    <div class="skills-grid">
+      <div class="skill"><h4>Python</h4><div class="progress"><span style="width:90%"></span></div></div>
+      <div class="skill"><h4>HTML & CSS</h4><div class="progress"><span style="width:90%"></span></div></div>
+      <div class="skill"><h4>JavaScript</h4><div class="progress"><span style="width:80%"></span></div></div>
+      <div class="skill"><h4>PHP</h4><div class="progress"><span style="width:50%"></span></div></div>
+      <div class="skill"><h4>Java</h4><div class="progress"><span style="width:65%"></span></div></div>
+      <div class="skill"><h4>C#/C++</h4><div class="progress"><span style="width:40%"></span></div></div>
+      <div class="skill"><h4>MySQL</h4><div class="progress"><span style="width:95%"></span></div></div>
+      <div class="skill"><h4>Accounting & Management</h4><div class="progress"><span style="width:98%"></span></div></div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>Short-Stay Accommodation Website</h3>
+        <p>
+          A web-based system designed to manage short-term accommodation bookings,
+          user inquiries, and listings using modern web technologies.
+        </p>
+      </div>
+      <div class="project">
+        <h3>Slide Puzzle Game</h3>
+        <p>
+          An object-oriented slide puzzle game developed to demonstrate OOP
+          principles such as encapsulation, inheritance, and modular design.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Email: <b>disiniwickramasinghe@gmail.com</b></p>
+    <a href="https://github.com/Diwyasingh" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/disini-diwyanga-wickramasinghe-bb852a273" target="_blank">LinkedIn</a>
+    <a href="https://medium.com/@disiniwickramasinghe" target="_blank">Medium</a>
+  </section>
+
+  <footer>
+    <p>© 2026 Disini Diwyanga Wickramasinghe | Portfolio</p>
+  </footer>
+
+</body>
+</html>
