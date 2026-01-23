@@ -1,14 +1,11 @@
-<html>
-    
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Disini Diwyanga Wickramasinghe | Portfolio</title>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -172,6 +169,7 @@
       background: linear-gradient(90deg, var(--primary), var(--accent));
     }
 
+    /* Projects */
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -180,16 +178,96 @@
 
     .project {
       background: var(--card);
-      padding: 30px;
       border-radius: 16px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.08);
       transition: transform 0.3s;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
     .project:hover {
       transform: translateY(-8px);
     }
 
+    .project-img {
+      width: 100%;
+      height: 170px;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      background: rgba(255,255,255,0.35);
+    }
+
+    .project-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-content {
+      padding: 22px 24px 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .project-content h3 {
+      margin: 0;
+      color: var(--secondary);
+      font-size: 1.25rem;
+    }
+
+    .project-content p {
+      margin: 0;
+      line-height: 1.7;
+      font-size: 0.98rem;
+    }
+
+    .project-links {
+      margin-top: 8px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: #fff;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      box-shadow: 0 10px 18px rgba(56, 2, 2, 0.22);
+      transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+    }
+
+    .btn-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 24px rgba(56, 2, 2, 0.25);
+      filter: brightness(1.02);
+    }
+
+    .btn-link.secondary {
+      background: transparent;
+      color: var(--secondary);
+      border: 2px solid rgba(67, 38, 39, 0.35);
+      box-shadow: none;
+    }
+
+    .btn-link.secondary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 18px rgba(56, 2, 2, 0.12);
+      border-color: rgba(67, 38, 39, 0.55);
+      background: rgba(255,255,255,0.35);
+    }
+
+    /* Contact */
     .contact {
       text-align: center;
     }
@@ -202,11 +280,92 @@
       font-weight: 500;
     }
 
+    .email-link{
+      text-decoration: none;
+      color: var(--secondary);
+      font-weight: 600;
+      position: relative;
+    }
+
+    .email-link::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-4px;
+      width:0;
+      height:2px;
+      background: var(--primary);
+      transition: 0.3s;
+    }
+
+    .email-link:hover::after{
+      width:100%;
+    }
+
+
     footer {
       text-align: center;
       padding: 30px;
       background: #e2e8f0;
       margin-top: 40px;
+    }
+
+    /* Floating CV Button */
+    .cv-float {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 999;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      color: #fff;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      box-shadow: 0 18px 30px rgba(56, 2, 2, 0.25);
+      transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+    }
+
+    .cv-float:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 24px 40px rgba(56, 2, 2, 0.28);
+      filter: brightness(1.02);
+    }
+
+    .cv-float .icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+
+    .cv-float .icon svg {
+      width: 18px;
+      height: 18px;
+      fill: #fff;
+      display: block;
+    }
+
+    @media (max-width: 520px) {
+      .cv-float span.label {
+        display: none;
+      }
+      .cv-float {
+        width: 56px;
+        height: 56px;
+        padding: 0;
+        justify-content: center;
+      }
+      .cv-float .icon {
+        width: 42px;
+        height: 42px;
+      }
     }
 
     @media (max-width: 768px) {
@@ -217,6 +376,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <nav>
@@ -272,35 +432,101 @@
 
   <section id="projects">
     <h2>Projects</h2>
+
     <div class="projects">
+
       <div class="project">
-        <h3>Short-Stay Accommodation Website</h3>
-        <p>
-          A web-based system designed to manage short-term accommodation bookings,
-          user inquiries, and listings using modern web technologies.
-        </p>
+        <div class="project-img">
+         
+          <img src="shortstay.jpeg" alt="Short-Stay Accommodation Website">
+        </div>
+        <div class="project-content">
+          <h3>Short-Stay Accommodation Website</h3>
+          <p>
+            A web-based system designed to manage short-term accommodation bookings,
+            user inquiries, and listings using modern web technologies.
+          </p>
+          <div class="project-links">
+            <!-- ✅ Update href to your real repo link -->
+            <a class="btn-link" href="https://github.com/Kavindu624/ShortStay.git" target="_blank" rel="noopener">
+              View Repository
+            </a>
+          </div>
+        </div>
       </div>
+
+    
       <div class="project">
-        <h3>Slide Puzzle Game</h3>
-        <p>
-          An object-oriented slide puzzle game developed to demonstrate OOP
-          principles such as encapsulation, inheritance, and modular design.
-        </p>
+        <div class="project-img">
+          <img src="slidepuzzle.png" alt="Slide Puzzle Game">
+        </div>
+        <div class="project-content">
+          <h3>Slide Puzzle Game</h3>
+          <p>
+            An object-oriented slide puzzle game developed to demonstrate OOP
+            principles such as encapsulation, inheritance, and modular design.
+          </p>
+          <div class="project-links">
+         
+            <a class="btn-link" href="https://github.com/Diwyasingh/SlidePuzzle.git" target="_blank" rel="noopener">
+              View Repository
+            </a>
+          </div>
+        </div>
       </div>
+
+
+      <div class="project">
+        <div class="project-img">
+      
+          <img src="ai.png" alt="AI-Based Educational Learning Assistant">
+        </div>
+        <div class="project-content">
+          <h3>AI-Based Educational Learning Assistant</h3>
+          <p>
+            A smart system that helps students learn better by providing study support,
+            content summaries, and quick answers using AI.
+          </p>
+          <div class="project-links">
+            
+            <a class="btn-link" href="https://github.com/Diwyasingh" target="_blank" rel="noopener">
+              View Repository
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <section id="contact" class="contact">
     <h2>Contact</h2>
-    <p>Email: <b>disiniwickramasinghe@gmail.com</b></p>
-    <a href="https://github.com/Diwyasingh" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/disini-diwyanga-wickramasinghe-bb852a273" target="_blank">LinkedIn</a>
-    <a href="https://medium.com/@disiniwickramasinghe" target="_blank">Medium</a>
+    <p>
+      Email:
+      <a class="email-link" href="mailto:disiniwickramasinghe@gmail.com?subject=Hello%20Disini%20-%20Portfolio%20Contact">
+        <b>disiniwickramasinghe@gmail.com</b>
+      </a>
+    </p>
+    <a href="https://github.com/Diwyasingh" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.linkedin.com/in/disini-diwyanga-wickramasinghe-bb852a273" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://medium.com/@disiniwickramasinghe" target="_blank" rel="noopener">Medium</a>
   </section>
 
   <footer>
     <p>© 2026 Disini Diwyanga Wickramasinghe | Portfolio</p>
   </footer>
+
+
+  <a class="cv-float" href="cv.pdf" download>
+    <span class="icon" aria-hidden="true">
+ 
+      <svg viewBox="0 0 24 24">
+        <path d="M12 3a1 1 0 0 1 1 1v8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 1 1 1.414-1.414L11 12.586V4a1 1 0 0 1 1-1z"></path>
+        <path d="M5 19a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1z"></path>
+      </svg>
+    </span>
+    <span class="label">Download CV</span>
+  </a>
 
 </body>
 </html>
